@@ -1,8 +1,15 @@
 package com.example.taller_movil.ui.theme
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Text
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -50,16 +57,16 @@ fun NavGraph(vm: UserViewModel) {
 
 @Composable
 private fun LoadingScreen() {
-    androidx.compose.material3.Box(
-        modifier = androidx.compose.ui.Modifier.fillMaxSize(),
-        contentAlignment = androidx.compose.ui.Alignment.Center
-    ) { androidx.compose.material3.CircularProgressIndicator() }
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) { CircularProgressIndicator() }
 }
 
 @Composable
 private fun ErrorScreen(msg: String) {
-    androidx.compose.material3.Box(
-        modifier = androidx.compose.ui.Modifier.fillMaxSize(),
-        contentAlignment = androidx.compose.ui.Alignment.Center
-    ) { androidx.compose.material3.Text(msg) }
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) { Text(text = msg) }
 }

@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.taller_movil.network.User
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserDetailScreen(
     user: User,
